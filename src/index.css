@@ -1,0 +1,213 @@
+:root {
+  --info-green: #01ec77;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #111111;
+}
+
+header {
+  background-color: #191919;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+header label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+header select {
+  background-color: #111111;
+  border: 0;
+  color: rgb(232, 230, 227);
+  height: 30px;
+  width: 100px;
+  border-radius: 5px;
+}
+
+.telegram-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.last-update {
+  padding-top: 40px;
+  color: rgb(232, 230, 227);
+  text-align: center;
+  font-family: Quicksand,sans-serif;
+}
+
+.cardGrid {
+  /* background-color: rgb(32, 30, 54); */
+  color: rgb(232, 230, 227);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* padding-top: 102px; */
+}
+
+.cardbox {
+  background-color: #191919;
+  background-image: url(./assets/cardbg.png);
+  width: 328px;
+  height: 179px;
+  border-radius: 11px;
+  margin-bottom: 15px;
+  margin-right: 15px;
+  flex: 0 0 auto;
+  /* padding: 5px 10px 20px 10px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardbox-top {
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+  height: 80px;
+}
+
+.cardbox-top-linha-um {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  flex: 0 0 auto;
+  margin-left: 20px;
+}
+
+.cardbox-top-linha-um p {
+  font-family: Quicksand,sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-left: -5px;
+}
+
+.cardbox-top-linha-um-esquerda {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 10px;
+}
+
+.cardbox-top-linha-dois {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--info-green);
+  font-family: Quicksand,sans-serif;
+  font-size: 24px;
+  margin: -5px 0 5px 20px;
+}
+
+.trophy {
+  width: 20px;
+  height: 40px;
+  color: #db7c23;
+}
+
+.card-espacador {
+  height: 7px;
+  background-color: #111111;
+}
+
+.cardbox-bottom {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+}
+
+.caixa {
+  width: 16px;
+  height: 8px;
+  font-size: 7px;
+}
+
+.caixa img {
+  width: 8px;
+  height: 4px;
+}
+
+.doji {
+  background-color: #a9a9a9;
+}
+
+.win {
+  background-color: var(--info-green);
+}
+
+.loss {
+  background-color: #f3324d;
+}
+
+.black {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.ciclos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 5px;
+  width: 140px;
+  flex: 0 0 auto;
+  padding-top: 4px;
+}
+
+.infoVerde {
+  color: var(--info-green);
+  font-family: Quicksand,sans-serif;
+  font-size: 12px;
+}
+
+.infoVermelha {
+  color: #f3324d;
+  font-family: Quicksand,sans-serif;
+  font-size: 12px;
+}
+
+.infoBranca {
+  color: #fff;
+  font-family: Montserrat,sans-serif;
+  font-size: 12px;
+}
+
+.currencyPairFlag {
+  min-height: 24px;
+  min-width: 24px;
+  width: 24px!important;
+  height: 24px!important;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 8px 0;
+}
+
+.absolutos td {
+  font-size: 10px;
+}
+
+.table-text {
+  text-align: center;
+}
+
+.agbot {
+  border-radius: 50%;
+}
+
+.header-icon {
+  width: 15px;
+  height: 15px;
+}

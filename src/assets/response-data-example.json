@@ -1,0 +1,140 @@
+{
+	"ok":
+	{
+		"vizinhos":
+		{
+			"81":
+			{
+				"name": "AG-RIVER",
+				"active": "EURUSD-OTC",
+				"timeframe": "M5",
+				"WIN": 0,
+				"winG1": 0,
+				"winG2": 0,
+				"loss": 0,
+				"ciclos": [""],
+				"percentage": ["0%", "0%", "0%", "0%"]
+			}
+		},
+		"FiveFlip":
+		{
+			"81":
+			{
+				"name": "AG-DUST",
+				"active": "EURUSD-OTC",
+				"timeframe": "M5",
+				"WIN": 0,
+				"winG1": 0,
+				"winG2": 0,
+				"loss": 3,
+				"ciclos": ["LOSS", "LOSS", "LOSS", ""],
+				"percentage": ["0%", "0%", "0%", "100%"]
+			}
+		},
+		"M_Maioria":
+		{
+			"81":
+			{
+				"name": "AG-FARM",
+				"active": "EURUSD-OTC",
+				"timeframe": "M5",
+				"WIN": 0,
+				"winG1": 0,
+				"winG2": 0,
+				"loss": 0,
+				"ciclos": [""],
+				"percentage": ["0%", "0%", "0%", "0%"]
+			}
+		},
+		"M_Minoria":
+		{
+			"81":
+			{
+				"name": "AG-HILL",
+				"active": "EURUSD-OTC",
+				"timeframe": "M5",
+				"WIN": 0,
+				"winG1": 0,
+				"winG2": 0,
+				"loss": 1,
+				"ciclos": ["LOSS", ""],
+				"percentage": ["0%", "0%", "0%", "100%"]
+			}
+		},
+		"MHI":
+		{
+			"81":
+			{
+				"name": "AG-MVP",
+				"active": "EURUSD-OTC",
+				"timeframe": "M5",
+				"WIN": 0,
+				"winG1": 0,
+				"winG2": 0,
+				"loss": 6,
+				"ciclos": ["LOSS", "LOSS", "LOSS", "LOSS", "LOSS", "LOSS", ""],
+				"percentage": ["0%", "0%", "0%", "100%"]
+			}
+		},
+		"MHI2":
+		{
+			"81":
+			{
+				"name": "AG-FLAG",
+				"active": "EURUSD-OTC",
+				"timeframe": "M5",
+				"WIN": 0,
+				"winG1": 0,
+				"winG2": 0,
+				"loss": 1,
+				"ciclos": ["LOSS", ""],
+				"percentage": ["0%", "0%", "0%", "100%"]
+			}
+		},
+		"MHI3":
+		{
+			"81":
+			{
+				"name": "AG-TRAP",
+				"active": "EURUSD-OTC",
+				"timeframe": "M5",
+				"WIN": 0,
+				"winG1": 0,
+				"winG2": 0,
+				"loss": 0,
+				"ciclos": [""],
+				"percentage": ["0%", "0%", "0%", "0%"]
+			}
+		},
+		"Torres_gemeas":
+		{
+			"81":
+			{
+				"name": "AG-NORD",
+				"active": "EURUSD-OTC",
+				"timeframe": "M5",
+				"WIN": 0,
+				"winG1": 0,
+				"winG2": 0,
+				"loss": 1,
+				"ciclos": ["LOSS", ""],
+				"percentage": ["0%", "0%", "0%", "100%"]
+			}
+		},
+		"mosqueteiros":
+		{
+			"81":
+			{
+				"name": "AG-BUBS",
+				"active": "EURUSD-OTC",
+				"timeframe": "M5",
+				"WIN": 0,
+				"winG1": 0,
+				"winG2": 0,
+				"loss": 1,
+				"ciclos": ["LOSS", ""],
+				"percentage": ["0%", "0%", "0%", "100%"]
+			}
+		}
+	}
+}
