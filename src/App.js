@@ -26,8 +26,8 @@ function App() {
       .then(response => {
         setSearchParams(oldParams => ({
           ...oldParams,
-          currency: cookies.currency,
-          timeframe: cookies.timeframe,
+          currency: cookies.currency ?? 'all',
+          timeframe: cookies.timeframe ?? 'M5',
           lastUpdate: date.toLocaleTimeString('pt-BR')
         }))
       })
