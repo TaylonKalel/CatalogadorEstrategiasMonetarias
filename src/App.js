@@ -67,7 +67,7 @@ function App() {
         <a href="https://t.me/agbot_oficial" target='_blank' rel='noreferrer'>
           <img src={TelegramIcon} alt='Telegram Icon' className='telegram-icon' />
         </a>
-        <h5>{` Última Atualização feita às: ${searchParams.lastUpdate} UTC-3`}</h5>
+        <h5>{` Última Atualização: ${searchParams.lastUpdate} UTC-3`}</h5>
       </div>
 
 

@@ -70,7 +70,7 @@ export default function Card({
       <div className='card-espacador'></div>
 
       <div className='cardbox-bottom'>
-        <table>
+        <table className="table">
           <thead>
             <tr>
               <th className='table-text infoBranca'>G0</th>
