@@ -1,6 +1,6 @@
-import TrophyCopper from './../assets/icons/trophyCopper.svg'
-import TrophySilver from './../assets/icons/trophySilver.svg'
-import TrophyGolden from './../assets/icons/trophyGolden.svg'
+import TrophyCopper from './../assets/icons/medalha3.svg'
+import TrophySilver from './../assets/icons/medalha2.svg'
+import TrophyGolden from './../assets/icons/medalha1.svg'
 
 export default function TrophyIcon({ position }) {
   switch (position) {

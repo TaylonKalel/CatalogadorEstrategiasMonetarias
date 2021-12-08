@@ -94,7 +94,7 @@ export default function Card({
         </table>
         <div className='ciclos-container'>
           {cardProps.ciclos.reverse().map((ciclo, i) => <CicloQuadradinho type={ciclo} key={i}/>)}
-          {(new Array(25 - cardProps.ciclos.length).fill('')).map((_,i) => <CicloQuadradinho type='black' key={i}/>)}
+          {/* {(new Array(cardProps.ciclos.length).fill('')).map((_,i) => <CicloQuadradinho type='black' key={i}/>)} */}
         </div>
       </div>
     </div>

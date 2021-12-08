@@ -3,40 +3,53 @@ import { retrieveCurrencies } from './../services/api'
 
 import CurrencyExchange from '../assets/icons/currencyExchange.svg'
 import Stopwatch from '../assets/icons/stopwatch.svg'
+import CollectionFill from '../assets/icons/collectionfill.svg'
 import Gear from '../assets/icons/gearfill.svg'
 import { useCookies } from 'react-cookie';
-
-const date = new Date()
 
 function Header({
   setSearchParams,
   setGales
 }) {
   const [currencies, setCurrencies] = useState([])
-  const [cookies, setCookie, removeCookie] = useCookies(['']);
+  const [cookies, setCookie] = useCookies(['']);
   const [currentCurrency, setCurrentCurrency] = useState(cookies.currency)
-  const [timeframeSelect, setTimeframeSelect] = useState(cookies.timeframe)
+  const [timeframeSelect,setTimeframeSelect] = useState(cookies.timeframe)
+  const [quadranteSelect,setquadranteSelect] = useState(cookies.quadrantes)
   const [galeSelect, setGaleSelect] = useState(cookies.gale)
 
   const handleSearchParams = event => {
+    
     switch (event.target.name) {
+      case 'quadrantes':
+        // setSearchParams(
+        //   oldParams => ({
+        //     currency: event.target.value,
+        //     timeframe: oldParams.timeframe,
+        //     quadrantes: oldParams.quadrantes,
+        //     lastUpdate: new Date().toLocaleTimeString('pt-BR')
+        //   }))
+        setquadranteSelect(event.target.value);       
+        break;
       case 'currency':
         setSearchParams(
-          oldParams => ( {
+          oldParams => ({
             currency: event.target.value,
             timeframe: oldParams.timeframe,
+            quadrantes: oldParams.quadrantes,
             lastUpdate: new Date().toLocaleTimeString('pt-BR')
           }))
         // setCurrentCurrency(event.target.value);       
         break;
       case 'timeframe':
         setSearchParams(
-          oldParams => ( {
+          oldParams => ({
             currency: oldParams.currency,
             timeframe: event.target.value,
+            quadrantes: oldParams.quadrantes,
             lastUpdate: new Date().toLocaleTimeString('pt-BR')
           }))
-        // setTimeframeSelect(event.target.value);
+        setTimeframeSelect(event.target.value);
         // setTimeout(() => window.location.reload(), 500);
         break;
       case 'gale':
@@ -64,7 +77,7 @@ function Header({
   }, [])
 
   return (
-    <header>
+    <header className="header">
 
       <label>
         <img src={CurrencyExchange} alt='currency-selection' className='header-icon' />
@@ -92,7 +105,18 @@ function Header({
         </select>
       </label>
 
-     
+      <div className="div">
+        <label>
+          <img src={CollectionFill} alt='quadrantes-selection' className='header-icon quadrante' id="quadrante" />
+          <select name="quadrantes" id="quadrantesSelect" value={quadranteSelect} className="select" onChange={handleSearchParams}>
+            <option value="24">24</option>
+            <option value="48">48</option>
+            <option value="96">96</option>
+          </select>
+        </label>
+      </div>
+
+
 
     </header>
   )

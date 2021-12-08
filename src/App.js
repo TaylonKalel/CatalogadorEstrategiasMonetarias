@@ -5,15 +5,14 @@ import { retrieveData, retrieveCurrencies } from './services/api'
 import { useCookies } from 'react-cookie';
 import TelegramIcon from './assets/icons/telegram.png'
 
-const date = new Date()
-
 function App() {
   
-  const [cookies, setCookie, removeCookie] = useCookies(['']);
+  const [cookies] = useCookies(['']);
   const [listOfCards, setListOfCards] = useState([])
   const [searchParams, setSearchParams] = useState({
     currency: 'all',
     timeframe: 'M5',
+    quadrantes: '24',
     lastUpdate: new Date().toLocaleTimeString('pt-BR')
   })
   const [gales, setGales] = useState('G2')
@@ -33,13 +32,14 @@ function App() {
           ...oldParams,
           currency: cookies.currency ?? 'all',
           timeframe: cookies.timeframe ?? 'M5',
+          quadrantes: cookies.quadrantes ?? '24',
           lastUpdate: new Date().toLocaleTimeString('pt-BR')
         }))
       })
   }, [])
 
   useEffect(() => {
-    retrieveData(searchParams.currency, searchParams.timeframe)
+    retrieveData(searchParams.currency, searchParams.timeframe, searchParams.quadrantes)
       .then(response => {
         searchParams.lastUpdate = new Date().toLocaleTimeString('pt-BR');
         setListOfCards(getCards(response.data.ok))
@@ -47,9 +47,8 @@ function App() {
   }, [searchParams])
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      console.log(searchParams);
-      retrieveData(searchParams.currency, searchParams.timeframe)
+    const interval = setInterval(() => {      
+      retrieveData(searchParams.currency, searchParams.timeframe, searchParams.quadrantes)
         .then(response => {
           searchParams.lastUpdate = new Date().toLocaleTimeString('pt-BR');
           setListOfCards(getCards(response.data.ok))
@@ -59,18 +58,7 @@ function App() {
     return () => clearInterval(interval);
   }, [searchParams]);
 
-  function teste() {
-    console.log('clicou')
-    // setCookie('currency', 'LTCUSD', { path: '/' })    
-    setSearchParams(
-      oldParams => ( {
-        currency: 'LTCUSD',
-        timeframe: oldParams.timeframe,
-        lastUpdate: new Date().toLocaleTimeString('pt-BR')
-      }))
-      console.log('searchParams: ', searchParams);
-  }
-
+  
   return (
     <>
       <Header setSearchParams={setSearchParams} searchParams={searchParams} setGales={setGales} />
