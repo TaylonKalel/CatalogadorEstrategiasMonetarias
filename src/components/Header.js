@@ -82,7 +82,7 @@ function Header({
       <label>
         <img src={CurrencyExchange} alt='currency-selection' className='header-icon' />
         <select name="currency" id="currency" value={currentCurrency} className="select" onChange={handleSearchParams}>
-          <option value='all'>Todos</option>
+          <option value='all'>Todos Ativos </option>
           {currencies.map((currency, index) => <option value={currency} key={index}>{currency}</option>)}
         </select>
       </label>
@@ -90,9 +90,9 @@ function Header({
       <label>
         <img src={Stopwatch} alt='timeframe-selection' className='header-icon' />
         <select name="timeframe" id="timeframeSelect" value={timeframeSelect} className="select" onChange={handleSearchParams}>
-          <option value="M5">M5</option>
-          <option value="M1">M1</option>
-          <option value="M15">M15</option>
+          <option value="M5">M5 Timeframe</option>
+          <option value="M1">M1 Timeframe</option>
+          <option value="M15">M15 Timeframe</option>
         </select>
       </label>
 
@@ -109,9 +109,9 @@ function Header({
         <label>
           <img src={CollectionFill} alt='quadrantes-selection' className='header-icon quadrante' id="quadrante" />
           <select name="quadrantes" id="quadrantesSelect" value={quadranteSelect} className="select" onChange={handleSearchParams}>
-            <option value="24">24</option>
-            <option value="48">48</option>
-            <option value="96">96</option>
+            <option value="24">24 Quadrantes</option>
+            <option value="48">48 Quadrantes</option>
+            <option value="96">96 Quadrantes</option>
           </select>
         </label>
       </div>

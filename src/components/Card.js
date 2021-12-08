@@ -19,13 +19,13 @@ export default function Card({
 
     switch (column) {
       case 'g0':
-        return `${Math.round((cardProps.WIN / total) * 100) }%`
+        return `${Math.round((cardProps.WIN / total) * 100)}%`
       case 'g1':
-        return `${Math.round(((cardProps.WIN + cardProps.winG1) / total) * 100 )}%`
+        return `${Math.round(((cardProps.WIN + cardProps.winG1) / total) * 100)}%`
       case 'g2':
-        return `${Math.round(((cardProps.WIN + cardProps.winG1 + cardProps.winG2) / total) * 100) }%`
+        return `${Math.round(((cardProps.WIN + cardProps.winG1 + cardProps.winG2) / total) * 100)}%`
       case 'loss':
-        return `${Math.round((cardProps.loss / total) * 100) }%`
+        return `${Math.round((cardProps.loss / total) * 100)}%`
       default:
         return '%%'
     }
@@ -38,15 +38,17 @@ export default function Card({
 
     switch (galeValue) {
       case 'Mao':
-        return `${Math.round((cardProps.WIN / total) * 100) }%`
+        return `${Math.round((cardProps.WIN / total) * 100)}%`
       case 'G1':
-        return `${Math.round(((cardProps.WIN + cardProps.winG1) / total) * 100 )}%`
+        return `${Math.round(((cardProps.WIN + cardProps.winG1) / total) * 100)}%`
       case 'G2':
-        return `${Math.round(((cardProps.WIN + cardProps.winG1 + cardProps.winG2) / total) * 100) }%`
+        return `${Math.round(((cardProps.WIN + cardProps.winG1 + cardProps.winG2) / total) * 100)}%`
       default:
         return '%%'
     }
   }
+
+  cardProps.ciclos.reverse().map((ciclo, i) => console.log('ciclo: ', ciclo))
 
   return (
     <div className='cardbox'>
@@ -54,13 +56,13 @@ export default function Card({
       <div className='cardbox-top'>
         <div className='cardbox-top-linha-um'>
           <div className='cardbox-top-linha-um-esquerda'>
-            <CurrencyIcon currencyName={cardProps.active}/>
+            <CurrencyIcon currencyName={cardProps.active} />
             <p>{cardProps.active}</p>
           </div>
           <p>{cardProps.name}</p>
         </div>
         <div className='cardbox-top-linha-dois'>
-          <TrophyIcon position={position}/>
+          <TrophyIcon position={position} />
           {getGalesPercentage(gales)}
         </div>
       </div>
@@ -93,7 +95,7 @@ export default function Card({
           </tbody>
         </table>
         <div className='ciclos-container'>
-          {cardProps.ciclos.reverse().map((ciclo, i) => <CicloQuadradinho type={ciclo} key={i}/>)}
+          {cardProps.ciclos.reverse().map((ciclo, i) => <CicloQuadradinho type={ciclo} key={i} />)}
           {/* {(new Array(cardProps.ciclos.length).fill('')).map((_,i) => <CicloQuadradinho type='black' key={i}/>)} */}
         </div>
       </div>

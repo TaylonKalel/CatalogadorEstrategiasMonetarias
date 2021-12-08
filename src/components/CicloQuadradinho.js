@@ -6,7 +6,7 @@ export default function CicloQuadradinho({ type }) {
       return (
         <div className='caixa loss'></div>
       )
-    case 'doji':
+    case 'd':
       return (
         <div className='caixa doji'></div>
       )
