@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
 import { retrieveCurrencies } from './../services/api'
-import TelegramIcon from './../assets/icons/telegram.png'
+
 import CurrencyExchange from '../assets/icons/currencyExchange.svg'
 import Stopwatch from '../assets/icons/stopwatch.svg'
 import Gear from '../assets/icons/gearfill.svg'
 import { useCookies } from 'react-cookie';
 
+const date = new Date()
 
 function Header({
   setSearchParams,
@@ -20,11 +21,23 @@ function Header({
   const handleSearchParams = event => {
     switch (event.target.name) {
       case 'currency':
-        setCurrentCurrency(event.target.value);       
+        setSearchParams(
+          oldParams => ( {
+            currency: event.target.value,
+            timeframe: oldParams.timeframe,
+            lastUpdate: new Date().toLocaleTimeString('pt-BR')
+          }))
+        // setCurrentCurrency(event.target.value);       
         break;
       case 'timeframe':
-        setTimeframeSelect(event.target.value);
-        setTimeout(() => window.location.reload(), 500);
+        setSearchParams(
+          oldParams => ( {
+            currency: oldParams.currency,
+            timeframe: event.target.value,
+            lastUpdate: new Date().toLocaleTimeString('pt-BR')
+          }))
+        // setTimeframeSelect(event.target.value);
+        // setTimeout(() => window.location.reload(), 500);
         break;
       case 'gale':
         setGaleSelect(event.target.value);
@@ -79,9 +92,7 @@ function Header({
         </select>
       </label>
 
-      <a href="https://t.me/agbot_oficial" target='_blank' rel='noreferrer'>
-        <img src={TelegramIcon} alt='Telegram Icon' className='telegram-icon' />
-      </a>
+     
 
     </header>
   )

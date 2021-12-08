@@ -1,5 +1,5 @@
 import axios from "axios"
 
-export const retrieveData = (currency, timeframe) => axios.get(`https://161.97.150.131:8765/api/strategies/${currency}/${timeframe}`)
+export const retrieveData = (currency, timeframe) => axios.get(`https://api.agbot.com.br/api/strategies/${currency}/${timeframe}`)
 
-export const retrieveCurrencies = () => axios.get('https://161.97.150.131:8765/api/coins/')
+export const retrieveCurrencies = () => axios.get('https://api.agbot.com.br/api/coins/')

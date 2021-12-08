@@ -41,10 +41,19 @@ header select {
 }
 
 .last-update {
-  padding-top: 40px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 60px;
+  justify-content: center;
+  align-items: center;  
+  
+  
+}
+.last-update>h5{
   color: rgb(232, 230, 227);
   text-align: center;
   font-family: Quicksand,sans-serif;
+  margin-left: 20px;
 }
 
 .cardGrid {
