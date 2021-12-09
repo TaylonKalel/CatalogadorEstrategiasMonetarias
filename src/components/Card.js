@@ -48,8 +48,6 @@ export default function Card({
     }
   }
 
-  cardProps.ciclos.reverse().map((ciclo, i) => console.log('ciclo: ', ciclo))
-
   return (
     <div className='cardbox'>
 

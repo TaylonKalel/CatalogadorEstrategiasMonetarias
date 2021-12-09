@@ -21,14 +21,7 @@ function Header({
   const handleSearchParams = event => {
     
     switch (event.target.name) {
-      case 'quadrantes':
-        // setSearchParams(
-        //   oldParams => ({
-        //     currency: event.target.value,
-        //     timeframe: oldParams.timeframe,
-        //     quadrantes: oldParams.quadrantes,
-        //     lastUpdate: new Date().toLocaleTimeString('pt-BR')
-        //   }))
+      case 'quadrantes':       
         setquadranteSelect(event.target.value);       
         break;
       case 'currency':
@@ -39,7 +32,7 @@ function Header({
             quadrantes: oldParams.quadrantes,
             lastUpdate: new Date().toLocaleTimeString('pt-BR')
           }))
-        // setCurrentCurrency(event.target.value);       
+        setCurrentCurrency(event.target.value);       
         break;
       case 'timeframe':
         setSearchParams(
@@ -50,11 +43,7 @@ function Header({
             lastUpdate: new Date().toLocaleTimeString('pt-BR')
           }))
         setTimeframeSelect(event.target.value);
-        // setTimeout(() => window.location.reload(), 500);
-        break;
-      case 'gale':
-        setGaleSelect(event.target.value);
-        break;
+        break;     
       default:
         break;
     }
@@ -62,7 +51,7 @@ function Header({
       ...oldParams,
       [`${event.target.name}`]: event.target.value
     }))
-    setCurrentCurrency(event.target.value);
+    // setCurrentCurrency(event.target.value);
     setTimeout(() => setCookie(event.target.name, event.target.value, { path: '/' }), 100);
   }
 
