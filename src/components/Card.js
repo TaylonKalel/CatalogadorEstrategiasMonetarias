@@ -8,6 +8,7 @@ export default function Card({
   position
 }) {
   // const cardProps = properties[Object.keys(properties)[0]]
+
   const cardProps = properties;
 
   if (!cardProps) return ''
@@ -47,6 +48,9 @@ export default function Card({
         return '%%'
     }
   }
+
+  // if (properties.name != 'AG-FLAG')
+  //   return null;
 
   return (
     <div className='cardbox'>
@@ -93,7 +97,12 @@ export default function Card({
           </tbody>
         </table>
         <div className='ciclos-container'>
-          {cardProps.ciclos.reverse().map((ciclo, i) => <CicloQuadradinho type={ciclo} key={i} />)}
+          {cardProps.ciclos.reverse().map((ciclo, i) => {
+            // console.log(i +': '+ ciclo);
+
+            return <CicloQuadradinho type={cardProps.ciclos[i]} key={i} />
+
+          })}
           {/* {(new Array(cardProps.ciclos.length).fill('')).map((_,i) => <CicloQuadradinho type='black' key={i}/>)} */}
         </div>
       </div>

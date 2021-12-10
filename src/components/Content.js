@@ -23,7 +23,7 @@ function Content({
 
   listOfCards.forEach((subLista) => {
     subLista.forEach((item) => {
-      item.teste = getGalesPercentage(item, gales);
+      item.porcentagem = getGalesPercentage(item, gales);
     })
   })
 
@@ -37,7 +37,7 @@ function Content({
 
 
   const sortedListOfCardsOrder = newlistOfCards.sort((a, b) => {
-    if (a.teste >= b.teste) {
+    if (a.porcentagem >= b.porcentagem) {
       return -1
     } else return 1
   });
@@ -50,7 +50,7 @@ function Content({
       {
         sortedListOfCards.length > 0
           ? sortedListOfCards.map((card, index) => {
-            // console.log('teste: ', indexCorrente);
+            // console.log('porcentagem: ', indexCorrente);
             indexCorrente++;
             return <Card
               properties={card}
