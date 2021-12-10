@@ -67,7 +67,7 @@ function Header({
 
   return (
     <header className="header">
-
+      <label id="version" hidden>version: 1.0.0</label>
       <label>
         <img src={CurrencyExchange} alt='currency-selection' className='header-icon' />
         <select name="currency" id="currency" value={currentCurrency} className="select" onChange={handleSearchParams}>
