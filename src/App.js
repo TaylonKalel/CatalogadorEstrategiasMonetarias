@@ -6,7 +6,7 @@ import { useCookies } from 'react-cookie';
 import TelegramIcon from './assets/icons/telegram.png'
 
 function App() {
-  
+
   const [cookies] = useCookies(['']);
   const [listOfCards, setListOfCards] = useState([])
   const [searchParams, setSearchParams] = useState({
@@ -39,16 +39,23 @@ function App() {
   }, [])
 
   useEffect(() => {
-    retrieveData(searchParams.currency, searchParams.timeframe, searchParams.quadrantes)
+    retrieveData(searchParams.currency, searchParams.timeframe, searchParams.quadrantes, gales)
       .then(response => {
         searchParams.lastUpdate = new Date().toLocaleTimeString('pt-BR');
         setListOfCards(getCards(response.data.ok))
       })
-  }, [searchParams])
+  }, [searchParams, gales])
+  // useEffect(() => {
+  //   retrieveData(searchParams.currency, searchParams.timeframe, searchParams.quadrantes, gales)
+  //     .then(response => {
+  //       searchParams.lastUpdate = new Date().toLocaleTimeString('pt-BR');
+  //       setListOfCards(getCards(response.data.ok))
+  //     })
+  // }, [searchParams, gales])
 
   useEffect(() => {
-    const interval = setInterval(() => {      
-      retrieveData(searchParams.currency, searchParams.timeframe, searchParams.quadrantes)
+    const interval = setInterval(() => {
+      retrieveData(searchParams.currency, searchParams.timeframe, searchParams.quadrantes, gales)
         .then(response => {
           searchParams.lastUpdate = new Date().toLocaleTimeString('pt-BR');
           setListOfCards(getCards(response.data.ok))
@@ -56,9 +63,9 @@ function App() {
 
     }, 60000);
     return () => clearInterval(interval);
-  }, [searchParams]);
+  }, [searchParams, gales]);
 
-  
+
   return (
     <>
       <Header setSearchParams={setSearchParams} searchParams={searchParams} setGales={setGales} />

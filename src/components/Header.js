@@ -14,15 +14,15 @@ function Header({
   const [currencies, setCurrencies] = useState([])
   const [cookies, setCookie] = useCookies(['']);
   const [currentCurrency, setCurrentCurrency] = useState(cookies.currency)
-  const [timeframeSelect,setTimeframeSelect] = useState(cookies.timeframe)
-  const [quadranteSelect,setquadranteSelect] = useState(cookies.quadrantes)
+  const [timeframeSelect, setTimeframeSelect] = useState(cookies.timeframe)
+  const [quadranteSelect, setquadranteSelect] = useState(cookies.quadrantes)
   const [galeSelect, setGaleSelect] = useState(cookies.gale)
 
   const handleSearchParams = event => {
-    
+
     switch (event.target.name) {
-      case 'quadrantes':       
-        setquadranteSelect(event.target.value);       
+      case 'quadrantes':
+        setquadranteSelect(event.target.value);
         break;
       case 'currency':
         setSearchParams(
@@ -32,7 +32,7 @@ function Header({
             quadrantes: oldParams.quadrantes,
             lastUpdate: new Date().toLocaleTimeString('pt-BR')
           }))
-        setCurrentCurrency(event.target.value);       
+        setCurrentCurrency(event.target.value);
         break;
       case 'timeframe':
         setSearchParams(
@@ -43,7 +43,7 @@ function Header({
             lastUpdate: new Date().toLocaleTimeString('pt-BR')
           }))
         setTimeframeSelect(event.target.value);
-        break;     
+        break;
       default:
         break;
     }
@@ -67,7 +67,7 @@ function Header({
 
   return (
     <header className="header">
-      <label id="version" hidden>version: 1.0.0</label>
+      <label id="version" className="none">version: 1.0.1</label>
       <label>
         <img src={CurrencyExchange} alt='currency-selection' className='header-icon' />
         <select name="currency" id="currency" value={currentCurrency} className="select" onChange={handleSearchParams}>
@@ -107,7 +107,7 @@ function Header({
 
 
 
-    </header>
+    </header >
   )
 }
 
