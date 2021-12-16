@@ -89,9 +89,9 @@ export default function Card({
               <td className='table-text infoVermelha'>{100 - getGalesPercentage(gales)}%</td>
             </tr>
             <tr className='absolutos'>
-              <td className={`table-text infoVerde ${gales == "Mao" ? "" : "none"}`}>{gales == 'Mao' ? `${cardProps.WIN} x ${cardProps.winG1 + cardProps.winG2 + cardProps.loss}` : ''}</td>
-              <td className={`table-text infoVerde ${gales == "G1" ? "" : "none"}`}>{gales == 'G1' ? `${cardProps.WIN + cardProps.winG1} x ${cardProps.winG2 + cardProps.loss}` : ''}</td>
-              <td className={`table-text infoVerde ${gales == "G2" ? "" : "none"}`}>{gales == 'G2' ? `${cardProps.WIN + cardProps.winG1 + cardProps.winG2} x ${cardProps.loss}` : ''}</td>
+              <td className={`table-text infoVerde ${gales == "Mao" ? "" : "none"}`}>{gales == 'Mao' ? `${cardProps.WIN}` : ''}</td>
+              <td className={`table-text infoVerde ${gales == "G1" ? "" : "none"}`}>{gales == 'G1' ? `${cardProps.WIN + cardProps.winG1} ` : ''}</td>
+              <td className={`table-text infoVerde ${gales == "G2" ? "" : "none"}`}>{gales == 'G2' ? `${cardProps.WIN + cardProps.winG1 + cardProps.winG2} ` : ''}</td>
               <td className='table-text infoVermelha'>{cardProps.loss}</td>
             </tr>
           </tbody>
