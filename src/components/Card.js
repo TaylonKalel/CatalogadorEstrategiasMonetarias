@@ -28,7 +28,7 @@ export default function Card({
       case 'loss':
         return `${Math.round((cardProps.loss / total) * 100)}%`
       default:
-        return '%%'
+        return '%'
     }
   }
 
@@ -39,13 +39,13 @@ export default function Card({
 
     switch (galeValue) {
       case 'Mao':
-        return `${Math.round((cardProps.WIN / total) * 100)}%`
+        return `${Math.round((cardProps.WIN / total) * 100)}`
       case 'G1':
-        return `${Math.round(((cardProps.WIN + cardProps.winG1) / total) * 100)}%`
+        return `${Math.round(((cardProps.WIN + cardProps.winG1) / total) * 100)}`
       case 'G2':
-        return `${Math.round(((cardProps.WIN + cardProps.winG1 + cardProps.winG2) / total) * 100)}%`
+        return `${Math.round(((cardProps.WIN + cardProps.winG1 + cardProps.winG2) / total) * 100)}`
       default:
-        return '%%'
+        return '%'
     }
   }
 
@@ -65,7 +65,7 @@ export default function Card({
         </div>
         <div className='cardbox-top-linha-dois'>
           <TrophyIcon position={position} />
-          {getGalesPercentage(gales)}
+          {getGalesPercentage(gales)}%
         </div>
       </div>
 
@@ -86,7 +86,7 @@ export default function Card({
               <td className={`table-text infoVerde ${gales == "Mao" ? "" : "none"}`}>{gales == 'Mao' ? getPercentage('g0') : ''}</td>
               <td className={`table-text infoVerde ${gales == "G1" ? "" : "none"}`}>{gales == 'G1' ? getPercentage('g1') : ''}</td>
               <td className={`table-text infoVerde ${gales == "G2" ? "" : "none"}`}>{gales == 'G2' ? getPercentage('g2') : ''}</td>
-              <td className='table-text infoVermelha'>{getPercentage(cardProps.loss)}</td>
+              <td className='table-text infoVermelha'>{100 - getGalesPercentage(gales)}%</td>
             </tr>
             <tr className='absolutos'>
               <td className={`table-text infoVerde ${gales == "Mao" ? "" : "none"}`}>{gales == 'Mao' ? `${cardProps.WIN} x ${cardProps.winG1 + cardProps.winG2 + cardProps.loss}` : ''}</td>
