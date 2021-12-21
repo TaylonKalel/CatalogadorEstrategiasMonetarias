@@ -75,23 +75,23 @@ export default function Card({
         <table className="table">
           <thead>
             <tr>
-              <th className={`table-text infoBranca ${gales == "Mao" ? "" : "none"}`}>{gales == 'Mao' ? 'G0' : ''}</th>
-              <th className={`table-text infoBranca ${gales == "G1" ? "" : "none"}`}>{gales == 'G1' ? 'G1' : ''}</th>
-              <th className={`table-text infoBranca ${gales == "G2" ? "" : "none"}`}>{gales == 'G2' ? 'G2' : ''}</th>
+              <th className={`table-text infoBranca ${gales === "Mao" ? "" : "none"}`}>{gales === 'Mao' ? 'G0' : ''}</th>
+              <th className={`table-text infoBranca ${gales === "G1" ? "" : "none"}`}>{gales === 'G1' ? 'G1' : ''}</th>
+              <th className={`table-text infoBranca ${gales === "G2" ? "" : "none"}`}>{gales === 'G2' ? 'G2' : ''}</th>
               <th className='table-text infoBranca'>HIT</th>
             </tr>
           </thead>
           <tbody>
             <tr className='porcentagens'>
-              <td className={`table-text infoVerde ${gales == "Mao" ? "" : "none"}`}>{gales == 'Mao' ? getPercentage('g0') : ''}</td>
-              <td className={`table-text infoVerde ${gales == "G1" ? "" : "none"}`}>{gales == 'G1' ? getPercentage('g1') : ''}</td>
-              <td className={`table-text infoVerde ${gales == "G2" ? "" : "none"}`}>{gales == 'G2' ? getPercentage('g2') : ''}</td>
+              <td className={`table-text infoVerde ${gales === "Mao" ? "" : "none"}`}>{gales === 'Mao' ? getPercentage('g0') : ''}</td>
+              <td className={`table-text infoVerde ${gales === "G1" ? "" : "none"}`}>{gales === 'G1' ? getPercentage('g1') : ''}</td>
+              <td className={`table-text infoVerde ${gales === "G2" ? "" : "none"}`}>{gales === 'G2' ? getPercentage('g2') : ''}</td>
               <td className='table-text infoVermelha'>{100 - getGalesPercentage(gales)}%</td>
             </tr>
             <tr className='absolutos'>
-              <td className={`table-text infoVerde ${gales == "Mao" ? "" : "none"}`}>{gales == 'Mao' ? `${cardProps.WIN}` : ''}</td>
-              <td className={`table-text infoVerde ${gales == "G1" ? "" : "none"}`}>{gales == 'G1' ? `${cardProps.WIN + cardProps.winG1} ` : ''}</td>
-              <td className={`table-text infoVerde ${gales == "G2" ? "" : "none"}`}>{gales == 'G2' ? `${cardProps.WIN + cardProps.winG1 + cardProps.winG2} ` : ''}</td>
+              <td className={`table-text infoVerde ${gales === "Mao" ? "" : "none"}`}>{gales === 'Mao' ? `${cardProps.WIN}` : ''}</td>
+              <td className={`table-text infoVerde ${gales === "G1" ? "" : "none"}`}>{gales === 'G1' ? `${cardProps.WIN + cardProps.winG1} ` : ''}</td>
+              <td className={`table-text infoVerde ${gales === "G2" ? "" : "none"}`}>{gales === 'G2' ? `${cardProps.WIN + cardProps.winG1 + cardProps.winG2} ` : ''}</td>
               <td className='table-text infoVermelha'>{cardProps.loss}</td>
             </tr>
           </tbody>
@@ -100,7 +100,7 @@ export default function Card({
           {cardProps.ciclos.reverse().map((ciclo, i) => {
             // console.log(i +': '+ ciclo);
 
-            return <CicloQuadradinho type={cardProps.ciclos[i]} key={i} />
+            return <CicloQuadradinho type={cardProps.ciclos[i]} tempo={cardProps.time[i]} key={i} />
 
           })}
           {/* {(new Array(cardProps.ciclos.length).fill('')).map((_,i) => <CicloQuadradinho type='black' key={i}/>)} */}

@@ -78,12 +78,6 @@ header select {
 .cardbox {
   background-color: #000;
   
-  /* background: rgb(0,0,0);
-  background: -moz-linear-gradient(90deg, rgba(0,0,0,0.8981967787114846) 43%, rgba(168,168,168,1) 88%);
-  background: -webkit-linear-gradient(90deg, rgba(0,0,0,0.8981967787114846) 43%, rgba(168,168,168,1) 88%);
-  background: linear-gradient(90deg, rgba(0,0,0,0.8981967787114846) 43%, rgba(168,168,168,1) 88%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#a8a8a8",GradientType=1); */
-  
   width: 328px;
   height: auto;
   border-radius: 11px;
@@ -160,6 +154,12 @@ header select {
   width: 16px;
   height: 8px;
   font-size: 7px;
+  transition: transform .2s;
+}
+
+.caixa:hover{
+  transform: scale(2.5);
+  cursor: default;
 }
 
 .caixa img {
@@ -181,6 +181,10 @@ header select {
 
 .black {
   background-color: rgba(0, 0, 0, 0);
+}
+
+.span_caixa{
+  color: #000;
 }
 
 .ciclos-container {
