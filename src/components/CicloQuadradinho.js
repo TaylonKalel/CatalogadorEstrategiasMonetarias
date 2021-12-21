@@ -1,5 +1,4 @@
 import GaleIcon from './../assets/icons/gale.svg'
-import ReactTooltip from 'react-tooltip';
 
 export default function CicloQuadradinho({ type, tempo }) {
   function changeBackground(e) {
