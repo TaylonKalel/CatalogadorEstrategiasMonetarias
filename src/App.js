@@ -15,7 +15,7 @@ function App() {
     quadrantes: '24',
     lastUpdate: new Date().toLocaleTimeString('pt-BR')
   })
-  const [gales, setGales] = useState('G2')
+  const [gales, setGales] = useState(cookies.gale ?? 'G2')
 
 
 

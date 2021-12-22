@@ -11,13 +11,14 @@ function Header({
   setSearchParams,
   setGales
 }) {
+  
   const [currencies, setCurrencies] = useState([])
   const [cookies, setCookie] = useCookies(['']);
   const [currentCurrency, setCurrentCurrency] = useState(cookies.currency)
   const [timeframeSelect, setTimeframeSelect] = useState(cookies.timeframe)
   const [quadranteSelect, setquadranteSelect] = useState(cookies.quadrantes)
   const [galeSelect, setGaleSelect] = useState(cookies.gale)
-
+  console.log(cookies.gale);
   const handleSearchParams = event => {
 
     switch (event.target.name) {
