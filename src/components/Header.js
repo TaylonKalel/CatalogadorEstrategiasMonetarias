@@ -56,7 +56,9 @@ function Header({
   }
 
   const handleGales = event => {
-    setGales(event.target.value)
+    setGaleSelect(event.target.value);
+    setCookie(event.target.name, event.target.value, { path: '/' });
+    setGales(event.target.value);
   }
   useEffect(() => {
     retrieveCurrencies()
@@ -87,7 +89,7 @@ function Header({
 
       <label>
         <img src={Gear} alt='gale-selection' className='header-icon' />
-        <select name="gale" id="galeSelect" className="select" onChange={handleGales}>
+        <select name="gale" id="galeSelect" className="select" value={galeSelect} onChange={handleGales}>
           <option value="G2">2 Gales</option>
           <option value="G1">1 Gale</option>
           <option value="Mao">Mão Fixa</option>

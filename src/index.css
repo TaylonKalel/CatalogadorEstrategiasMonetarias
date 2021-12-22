@@ -158,7 +158,8 @@ header select {
 }
 
 .caixa:hover{
-  transform: scale(2.5);
+  transform: scale(3.0);
+  padding: 1.1px;
   cursor: default;
 }
 
